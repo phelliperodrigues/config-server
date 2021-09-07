@@ -1,0 +1,20 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: ms-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/phelliperodrigues/ms-config-server
+          #username: username
+          #password: password
+          default-label: main
+          search-paths:
+          - 'greeting-service*'
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
